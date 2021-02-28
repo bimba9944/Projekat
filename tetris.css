@@ -1,0 +1,25 @@
+body {
+    margin: 0%; 
+    background-image: url("slika2.jpg");
+    text-align: center;
+    background-position: center;
+    
+}
+
+#poeni {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+}
+
+canvas {
+    height: 90vh;
+}
+
+
+#tetris {
+    opacity: 0.96;
+    
+} 
