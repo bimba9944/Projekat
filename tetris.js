@@ -10,14 +10,6 @@ my_gradient.addColorStop(1, "white");
 
 
 
-
-
-
-
-
-
-
-
 function sudar(arena, igrac) {
     const [m, o] = [igrac.matrica, igrac.pos];                                              //proverava oblik figure i poziciju u areni
     for(let y=0 ; y< m.length ; ++y){                                                       //za broj redova u areni
@@ -103,11 +95,17 @@ function rusenje() {
         const red = arena.splice(y, 1)[0].fill(0);
         arena.unshift(red);
         ++y;
+        
+        
 
-        igrac.poeni += brojacRedova * 10;
-        brojacRedova *= 2;
+
+        igrac.poeni += brojacRedova * 100;
+        // brojacRedova *= 2;
     }
 }
+
+
+
 
 
 function crtanje() {
@@ -198,14 +196,36 @@ function crtanjeFigura(){
         arena.forEach(red => red.fill(0));
         igrac.poeni = 0;
         updatePoena();
-
     }
 }
 
 
-let brojacPadanja = 0;
-let intervalPadanja = 1000;
 
+function primer(){
+    window.location.href='tetrisNormal.php';
+}
+function primer1(){
+    window.location.href='tetris.php';
+}
+
+
+let intervalPadanja = 1000;
+function brzinapadanja(){
+    // window.location.href='tetris.php';
+    intervalPadanja = 300;
+}
+
+// function provera(){
+//     document.getElementById('pocetak1').onclick = function() {
+//         intervalPadanja = 1000;
+//     }​
+//     document.getElementById('pocetak2').onclick = function() {
+//         intervalPadanja = 300;
+//     }​​
+// }
+
+
+let brojacPadanja = 0;
 let prosliInterval = 0;
 
 function update(interval = 0) {
@@ -221,7 +241,7 @@ function update(interval = 0) {
 }
 
 function updatePoena(){
-    document.getElementById('poeni').innerHTML = "Score:" +igrac.poeni;
+    document.getElementById('poeni').innerHTML = "Score:" + igrac.poeni;
 }
 
 const arena = pravljenjeMatrice(12 ,20);
@@ -232,7 +252,11 @@ const igrac = {
     poeni: 0,
 };
 
-const boje = [null,'red', 'green', 'seashell', 'maroon', 'indigo', 'royalblue', 'yellow'];
+
+
+
+
+const boje = [null,'red', 'green', 'seashell', 'maroon', 'pink', 'royalblue', 'yellow'];
 
 document.addEventListener('keydown', event => {
     if (event.keyCode === 37){
@@ -253,6 +277,9 @@ document.addEventListener('keydown', event => {
     
 });
 
+
+
 crtanjeFigura();
 update();
 updatePoena();
+

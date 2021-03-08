@@ -1,0 +1,25 @@
+body {
+    background-image: url("slika5.jpg");
+    /* background-size: cover;
+    background-position: center; */
+}
+
+* {
+    font-family: 'Press Start 2P', cursive;
+    color: seashell;
+}
+
+h1 {
+    font-size: 100px;
+    text-align: center;
+}
+#dugme {
+    background-color: seashell;
+}
+#input {
+    background-color: yellow;
+}
+
+.container {
+    margin-top: 10%;
+}
